@@ -52,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
             hp = random.nextInt(maxhp)+minhp;
             lvl = lvl+1;
             hard = 1;
-            updatemonei();
             updateLvL();
             updatehp();
             if(random1.nextFloat() < 0.2){
@@ -61,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
             else {
                 monei = monei + 100;
             }
+            updatemonei();
         }
         if(hard == 1){
             maxhp = maxhp + 100;
