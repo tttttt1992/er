@@ -23,7 +23,9 @@ public class MainActivity extends AppCompatActivity {
 
     TextView Hp;
     TextView Monei;
+    TextView LvL;
     Random random = new Random();
+    Random random1 = new Random();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         });
         Hp = findViewById(R.id.Hp);
         Monei = findViewById(R.id.Monei);
+        LvL = findViewById(R.id.LvL);
         updatehp();
         updatemonei();
     }
@@ -49,8 +52,15 @@ public class MainActivity extends AppCompatActivity {
             hp = random.nextInt(maxhp)+minhp;
             lvl = lvl+1;
             hard = 1;
-            monei = monei + 100;
             updatemonei();
+            updateLvL();
+            updatehp();
+            if(random1.nextFloat() < 0.2){
+                monei = monei + 100 * 2;
+            }
+            else {
+                monei = monei + 100;
+            }
         }
         if(hard == 1){
             maxhp = maxhp + 100;
@@ -61,9 +71,10 @@ public class MainActivity extends AppCompatActivity {
     }
     void updatehp(){Hp.setText("Hp " +hp);}
     void updatemonei(){Monei.setText("Monei " +monei);}
+    void updateLvL(){LvL.setText("lvl " +lvl);}
 
     public void dmg(View view) {
-        if (monei == 100){
+        if (monei >= 100){
             monei = monei - 100;
             dmg = dmg + 1;
             updatemonei();
