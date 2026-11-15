@@ -71,7 +71,6 @@ public class MainActivity extends AppCompatActivity {
             minhp = minhp + 100;
             hard = 0;
         }
-
     }
 
     public void dmg(View view) {
