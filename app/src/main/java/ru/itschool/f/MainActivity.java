@@ -21,11 +21,13 @@ public class MainActivity extends AppCompatActivity {
     int hard = 0;
     int monei = 0;
 
+    double chans = 0.1;
+
     TextView Hp;
     TextView Monei;
     TextView LvL;
+
     Random random = new Random();
-    Random random1 = new Random();
 
     void updatehp(){Hp.setText("Hp " +hp);}
     void updatemonei(){Monei.setText("Monei " +monei);}
@@ -58,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
             hard = 1;
             updateLvL();
             updatehp();
-            if(random1.nextFloat() < 0.2){
+            if(random.nextFloat() < chans){
                 monei = monei + 100 * 2;
             }
             else {
@@ -77,6 +79,14 @@ public class MainActivity extends AppCompatActivity {
         if (monei >= 100){
             monei = monei - 100;
             dmg = dmg + 1;
+            updatemonei();
+        }
+    }
+
+    public void chans(View view) {
+        if (monei >= 100){
+            monei = monei - 100;
+            chans = chans + 0.1;
             updatemonei();
         }
     }
