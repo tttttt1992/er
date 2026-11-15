@@ -27,6 +27,10 @@ public class MainActivity extends AppCompatActivity {
     Random random = new Random();
     Random random1 = new Random();
 
+    void updatehp(){Hp.setText("Hp " +hp);}
+    void updatemonei(){Monei.setText("Monei " +monei);}
+    void updateLvL(){LvL.setText("lvl " +lvl);}
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,9 +73,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
-    void updatehp(){Hp.setText("Hp " +hp);}
-    void updatemonei(){Monei.setText("Monei " +monei);}
-    void updateLvL(){LvL.setText("lvl " +lvl);}
 
     public void dmg(View view) {
         if (monei >= 100){
